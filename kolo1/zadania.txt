@@ -1,0 +1,129 @@
+Uwaga: po zakończeniu kolokwium spakuj napisane przez siebie
+programy i prześlij je mailem. Dołącz także TEN tekst, jeżeli
+coś w nim zmienisz (możesz w nim wpisać niektóre odpowiedzi).
+Pracę możesz prowadzić w katalogu 'kolo1', który potem łatwo
+spakować np. tak: tar zcvf kolo1.tgz kolo1
+
+PROGRAMOWANIE OBIEKTOWE: Kolokwium nr 1.
+----------------------------------------
+
+W tym pliku masz opisane co trzeba zrobić. Przeczytaj UWAŻNIE
+wszystkie polecenia, a dopiero potem weź się za ich wykonanie.
+Przeczytanie całości zajmie Ci tylko kilka minut.
+
+Przy każdym zadaniu podałem ile jest ono warte punktów, np. [3pkt].
+Każde zadanie, które będzie rozwiązane błyskotliwie i z polotem,
+może otrzymać dodatkowy punkt bonusowy PONAD LIMIT. Zdarza się to
+jednak bardzo rzadko, więc nie rób sobie nadziei :)
+
+
+Zadanie 1:[2pkt] Podstawy składni java
+--------------------------------
+Napisz program o nazwie zadanie1.java, w którym zdefiniuj klasę
+Dane, w której będą pola: całkowite o nazwie liczba, tekstowe o
+nazwie napis oraz zmiennoprzecinkowe o nazwie wynik. Zadaniem klasy
+jest ustawienie tych pól na następujące wartości:
+  - liczba ma być równa numerowi dnia Twojego urodzenia
+  - tekstowe ma być równe Twojemu nazwisku
+  - wynik ma być Twoją orientacyjną średnią z poprzedniego roku.
+Program powinien wypisać wartości tych pól przy standardowym
+uruchomieniu (w dowolnej kolejności).
+
+
+Zadanie 2:[3pkt] Magiczna cyfra
+-------------------------
+Napisz program, który wyliczy magiczną cyfrę związaną z Twoim
+imieniem i nazwiskiem. Cyfra wyliczana ma być w następujący sposób:
+Zdefiniuj pola takie jak suma oraz nazwa, w której będą Twoje imiona
+i nazwisko. Następnie przeprowadź analizę każdego znaku z tekstu:
+1. Jeżeli jest to samogłoska, do sumy dodaj 3.
+2. Jeżeli jest to spółgłoska, której kod liczbowy jest parzysty,
+  dodaj do sumy 1.
+3. Jeżeli jest to spółgłoska, której kod liczbowy jest nieparzysty,
+  odejmij od sumy 2.
+4. Znaki nie będące literami (takie jak spacje lub cokolwiek innego
+    z napisu) możesz zignorować.
+Liczbę oraz napis dla której ją uzyskano możesz wpisać poniżej:
+
+Napis:  Tomasz Adamczyk
+Liczba: 9
+
+
+Zadanie 3:[2pkt] Teoria programowania obiektowego
+-------------------------------------------------
+Przypomnij sobie numer swojego albumu studenckiego. Jeżeli ten numer
+jest parzysty, użyj swoich własnych słów i wyjaśnij, czym są pojęcia:
+- klasa, instancja, metoda
+Jeżeli Twój numer albumu jest nieparzysty, podejmij się wyjaśnienia:
+- obiekt, konstruktor, pole
+
+
+Zadanie 4:[3pkt] Zadanie dowolne
+--------------------------------
+Wymyśl i rozwiąż samodzielnie zadanie związane z programowaniem
+obiektowym. Może to być napisanie programu rozwiązującego jakiś
+problem lub wyjaśnienie jakiegoś zagadnienia, które porządnie
+opiszesz. Zadanie powinno być trudne i na wysokim poziomie, a
+udzielona odpowiedź prawidłowa, aby zdobyć za nie punkty. Zadania
+trywialne, nie na temat, i zbyt proste w ocenie Prowadzącego mogą
+nie zostać ocenione. Uwaga: to najtrudniejsze zadanie w tym
+kolokwium. Aby ułatwić sobie pracę, wyobraź sobie, że piszesz
+sprytne zadanie dla najlepszego programisty w swojej grupie.
+
+
+===================================================================
+Przeczytaj uważnie ZANIM zaczniesz rozwiązywać zadania.
+
+WYSYŁANIE KOLOKWIUM:
+
+- masz na to czas tylko do końca zajęć, ani minuty dłużej
+- decyduje data i godzina w programie pocztowym
+- wysyłaj na adres: <piotao@gmail.com>
+- ustaw tytuł: [PO] imię nazwisko
+- pamiętaj o załączniku (patrz niżej)
+- katalog kolo1* spakuj poleceniem:
+    tar zcvf kolo-imie-nazwisko.tar kolo1
+
+POZOSTAŁE ZASADY:
+
+1. Nie musisz pisać koła, najwyżej dostaniesz 0 punktów.
+
+2. Oszukiwanie jest oficjalnie zabronione.
+
+3. Nie rozmawiaj z innymi! Twoja praca musi być samodzielna.
+
+4. Możesz korzystać z notatek, man, info, i wyszukiwarki googla.
+
+5. Każde zadanie może zostać nagrodzone dodatkowym punktem.
+Dodatkowy punkt będzie przyznany tylko wtedy, jeżeli rozwiązanie
+jest niezwykle błyskotliwe i zaskakujące, lub wykorzystuje bardzo
+zaawansowaną wiedzę.
+
+7. Łamanie zasad skutkuje przyznaniem punktów ujemnych.
+
+8. Koło trwa do planowej pełnej godziny zakończenia zajęć. Wysłanie
+maila z rozwiązaniem po tym terminie skutkuje odliczeniem jednego
+punktu za każdą minutę opóźnienia. Porada: wyślij rozwiązania
+wcześniej niż w ostatniej minucie.
+
+9. Ocena za kolokwium jest przyznawana przez Prowadzącego i w
+większości przypadków nie podlega dyskusji oraz nie jest
+negocjowalna. W przypadku błędów, lub usterek Pracowni Prowadzący
+działa na korzyść ewentualnych poszkodowanych :)
+
+10. Nie wysłanie maila z odpowiedziami, wysłanie pustego pliku lub
+jakakolwiek inna przyczyna nie dostarczenia rozwiązań w określonym
+czasie skutkuje brakiem zaliczenia. Osoby nieobecne mogą dostarczyć
+zwolnienia lekarskie, lub jeżeli nie przeszkadza im brak punktów,
+mogą się nie przejmować.
+
+11. Udokumentowana i usprawiedliwiona nieobecność pozwala na
+podejście do koła w innym terminie. Jedyny taki termin jest w czasie
+konsultacji Prowadzącego po wcześniejszym umówieniu się.
+
+12. Upewnij się, że wszystko rozumiesz i wiesz, jak poprawnie
+napisać i wysłać kolokwium. Zapytaj, zanim będzie za późno!  Po
+wysłaniu odpowiedzi, żadne tłumaczenia w stylu "nie rozumiem"
+nie są już przyjmowane.
+
+13. Powodzenia :) Kolokwium NIE JEST trudne!

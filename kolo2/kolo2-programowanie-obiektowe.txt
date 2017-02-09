@@ -1,0 +1,178 @@
+vim: ts=2:ai:si:tw=68:nobk:wrap
+[c] Piotr Arłukowicz <piotao@gmail.com>, 20161215, @hebron
+
+Odpowiedzi wpisz w pliku poniżej, i prześlij TYLKO ten plik na adres
+prowadzącego pracownię: piotao@gmail.com. W tytule maila wpisz swoje
+imię i nazwiko, oraz tag [po2]. Przykładowo, prowadzący napisałby tak:
+[po2] Piotr Arłukowicz
+
+PROGRAMOWANIE OBIEKTOWE: Kolokwium nr 2.
+----------------------------------------
+
+Podaj swoje imię i nazwisko: [Tomasz Adamczyk]
+
+Przy każdym zadaniu podałem ile jest ono warte punktów, np. [3pkt].
+Każde zadanie, które będzie rozwiązane błyskotliwie i z polotem,
+może otrzymać dodatkowy punkt bonusowy PONAD LIMIT. Zdarza się to
+jednak bardzo rzadko, więc nie rób sobie nadziei :)
+
+Zadanie 1:[3pkt] Podstawowe terminy i określenia.
+-------------------------------------------------
+Wyjaśnij znaczenie pojęć takich jak:
+- polimorfizm i dynamiczne wiązanie klas
+- klasa abstrakcyjna i jej cechy
+- interfejs i wszystko na ten temat
+
+Możesz podać przykłady ilustrujące swoje wyjaśnienia. W szczególności, cenne
+będzie wyjaśnienie czym różnią się interfejsy od abstrakcji, czy mogą być
+nieabstrakcyjne interfejsy, i jakie stwarzają możliwości dla programisty.
+Nie przepisuj Internetu, wyjaśnij to swoimi słowami. Możesz także napisać
+jak realizuje się wielokrotne dziedziczenie w języku, który nie wspiera
+bezpośrednio wielokrotnego dziedziczenia i pokazać swoje własne przykłady.
+
+Polimorfizm - pozwala pisać ogólne struktury danych i algorytmy, bez precyzowania na jakich dokładnie typach one operują
+i bez konieczności dostarczania implementacji odpowiednich dla każdego przypadku.
+
+Dynamiczne wiązanie klas - jest to wiązanie nazw obiektów występujących w programie z przypisanymi typami obiektów na etapie wykonania programu.
+Przykład:
+A a = new A();
+B b = new B();
+A b1 = new B();
+Obiekt b1 początkowo jest typu A, lecz w momencie wywyołania programu staje się obiektem typu B.
+
+Klasa abstrakcyjna - jest pewnym uogólnieniem innych klas (na przykład dla występujących w rzeczywistości obiektów), lecz sama jako taka nie istnieje.
+W jej strukturze musi istnieć przynajmniej jedna metoda abstrakcyjna (jest zadeklarowana, ale nie zdefiniowana), aby klasa stała się abstrakcyjna.
+Nie może mieć swoich reprezentantów pod postacią obiektów.
+Przykład:
+public abstract class Student{
+    //zmienna
+    int czas;
+    //metoda abstrakcyjna
+    public abstract void Spij();
+    //zwykła metoda z implementacją
+    public static void UczSie(){
+        System.out.println("Czas sie uczyc!");
+    }
+}
+Występuje jedna metoda abstrakcyjna, więc klasa również jest abstrakcyjna.
+
+Interfejs - szkielet klasy, jaki będą musiały spełniać klasy implementujące nasz interfejs.
+Interfejs inaczej jest to kontrakt, który mówi co klasa implementująca może robić, ale nie jak ma to robić.
+Przykład:
+public interface Samochod{
+    public void Jedz(int predkosc);
+    public void Stoj();
+}
+W interfejsie są zadeklarowane dwie metody, ale nie są one zdefiniowane, jak mają działać.
+
+Różnice:
+* klasa może implementować wiele interfejsów, ale może dziedziczyć tylko po jednej klasie abstrakcyjnej;
+* wszystkie zadeklarowane metody w interfejsie są publiczne, natomiast metody zadeklarowane w klasach abstrakcyjnych mogą być publiczne lub chronione;
+* interfejs może zawierać jedynie deklaracje metod, a klasa abstrakcyjna może zawierać również metody zdefiniowane;
+* klasy abstrakcyjne mogą zawierać pola (zmienne), natomiast interfejsy - nie.
+
+Przykład wielokrotnego dziedziczenia w Javie:
+class A{
+  void m(){
+    System.out.println(1);
+  }
+  void test(){
+    m();
+  }
+}
+
+class B extends A{
+  void m(){
+    System.out.println(2);
+  }
+  void testSuper(){
+    super.m();
+  }
+}
+
+class C extends B{
+  void m(){
+    System.out.println(3);
+  }
+}
+Klasa C nie dziedziczy bezpośrednio z klasy A, ale poprzez dziedziczenie klasy B dziedziczącej po klasie A, klasa C również dziedziczy po klasie A.
+
+Zadanie 2:[4pkt] Praktyczna implementacja abstrakcji
+-----------------------------------------------------
+Zdefiniuj klasę Point3D, która będzie zawierała pola z trzema współrzędnymi
+rzeczywistymi. Te współrzędne oznaczają położenie punktu w przestrzeni 3d,
+zdefiniowane jako odległość od położenia zerowego. Klasa powinna
+implementować dwa interfejsy Cartesian3d i Polar3d: każdy zapewniający
+funkcję obliczającą odległość od środka układu, na dwa sposoby, zależnie
+od interfejsu. W układzie kartezjańskim współrzędne traktowane są jak xyz,
+a w układzie biegunowym jako promień i dwa kąty obrotu. Cały kod wklej
+poniżej.
+
+//====[kod]===============================================================
+
+import java.io.*;
+import java.math.*;
+
+interface Cartesian3D{
+    public double LengthC(double x, double y, double z);
+}
+
+interface Polar3D{
+    public double LengthP(double x, double y, double z);
+}
+
+class Point3D implements Cartesian3D, Polar3D{
+  double x, y, z;
+
+  Point3D(){
+    this.x = 0.0;
+    this.y = 0.0;
+    this.z = 0.0;
+  }
+
+  Point3D(double x, double y, double z){
+    this.x = x;
+    this.y = y;
+    this.z = z;
+  }
+
+  String str(){
+    return Double.toString(this.x) + ", " + Double.toString(this.y) + " ," + Double.toString(this.z);
+  }
+
+  public double LengthC(double x, double y, double z){
+    double wyn = x*x + y*y + z*z;
+    wyn = Math.sqrt(wyn);
+    return wyn;
+  }
+
+  public double LengthP(double x, double y, double z){
+    Point3D zero = new Point3D(0, 0, 0);
+    double wyn = Math.pow(x-zero.x, 2) + Math.pow(y-zero.y, 2) + Math.pow(z-zero.z, 2);
+    wyn = Math.sqrt(wyn);
+    return wyn;
+  }
+
+  public static void main(String[] args){
+    Point3D p = new Point3D(3, 4, 5);
+    System.out.println(p.LengthC(p.x, p.y, p.z));
+    System.out.println(p.LengthP(p.x, p.y, p.z));
+  }
+}
+
+//========================================================================
+
+Zadanie 3:[3pkt] Zadanie dowolne.
+---------------------------------
+Ułóż i rozwiąż zadanie dowolne dotyczące programowania w Javie na poziomie,
+który do tej pory omawiany był na ćwiczeniach i na wykładzie. Możesz
+nieznacznie przewyższyć poziom, ale nie licz na to, że skomplikowane
+przykłady skopiowane z internetu zdobędą wysokie noty. Zadanie powinno być
+sformułowane jasno, poprawnie, i oczywiście poprawnie rozwiązane, w sposób
+nie pozostawiający wątpliwości. Zadania zbyt proste, trywialne lub głupio
+sformułowane będą odrzucone. Podanie odpowiedzi bez zadanego pytania lub
+postawionego jasno problemu niczego nie daje. W tym zadaniu lepiej jest
+napisać więcej niż za mało, a dokładne określenie zakresu, tematu, lub
+podanie przykładów może pomóc w ujednoznacznieniu tematyki. Powodzenia!
+
+Plik zad3.zip

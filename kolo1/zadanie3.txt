@@ -1,0 +1,7 @@
+Obiekt - struktura zawierająca dane oraz metody, czyli funkcje służące do wykonywania operacji na tych danych, zbudowana na podstawie wcześniej utworzonej klasy.
+Są tworzone dynamicznie jako podstawowy element konstrukcji programu obiektowego.
+
+Konstruktor - specjalna metoda danej klasy, wywoływana podczas tworzenia jej instancji.
+Podstawowym zadaniem konstruktora jest zainicjowanie obiektu, a w niektórych językach programowania także utworzenie obiektu danej klasy.
+
+Pole - zadeklarowana zmienna znajdująca się w klasie. Jedna z dwóch możliwych składowych obiektów.
