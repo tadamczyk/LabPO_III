@@ -2,12 +2,15 @@ import java.io.*;
 
 class PeselVerify{
   String pesel;
+
   PeselVerify(String pes){
     pesel = pes;
   }
+
   int at(int n){
     return Character.getNumericValue(pesel.charAt(n));
   }
+
   int sum(){
     int sum=0;
     for (int l=0;l<10;l++){
@@ -19,10 +22,12 @@ class PeselVerify{
     sum+=at(10);
     return sum;
   }
+
   boolean valid(){
     if (sum()%10==0) return true;
     else return false;
   }
+
   boolean alter(){
     int sum=0, t, t1=1;
     for (int m=0;m<2;m++){
@@ -39,7 +44,6 @@ class PeselVerify{
         }
         sum=sum+t+at(10);
         if (sum%10==0) return true;
-        //System.out.println(sum);
       }
       t1=-1;
     }
@@ -47,6 +51,7 @@ class PeselVerify{
     if (sum()+1==0) return true;
     return false;
   }
+
   public static void main(String[] args){
     PeselVerify p = new PeselVerify(args[0]);
     if (p.valid()) System.out.println("PESEL is OK");

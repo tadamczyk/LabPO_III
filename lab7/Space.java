@@ -2,22 +2,31 @@ import java.io.*;
 
 class Point1D {
   double x;
+
   Point1D(){ this.x = 0.0; }
+
   Point1D(double x){ this.x = x; }
+
   String str(){ return Double.toString(this.x); }
 }
 
 class Point2D extends Point1D {
   double y;
+
   Point2D(){ super(); this.y = 0.0; }
+
   Point2D(double x,double y){ super(x); this.y = y; }
+
   String str(){ return super.str()+","+Double.toString(this.y); }
 }
 
 class Point3D extends Point2D {
   double z;
+
   Point3D(){ super(); this.z = 0.0; }
+
   Point3D(double x,double y,double z){ super(x,y); this.z = z; }
+
   String str(){ return super.str()+","+Double.toString(this.z); }
 }
 
@@ -31,7 +40,6 @@ class Space {
     for(int i=0;i<MAX;i++){
       System.out.println( p[i].getClass().getName() );
       System.out.println( p[i].str() );
-      //System.out.println( p[i].y );
     }
   }
 }

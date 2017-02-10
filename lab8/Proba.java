@@ -6,12 +6,14 @@ import javax.swing.*;
 class Okno extends JFrame implements ActionListener{
   JButton guzikOff, guzikData;
   JLabel data;
+
   JButton zrobGuzik(int x, int y, int w, int h, String t){
     JButton b = new JButton(t);
     b.setBounds(x, y, w, h);
     b.addActionListener(this);
     return b;
   }
+
   Okno(){
     super("Okno");
     setLocation(550, 275);
@@ -29,6 +31,7 @@ class Okno extends JFrame implements ActionListener{
     data.setBounds(170, 10, 200, 30);
     add(data);
   }
+
   public void actionPerformed(ActionEvent e){
     Object src = e.getSource();
     if (src == guzikOff){

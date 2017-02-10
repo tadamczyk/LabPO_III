@@ -2,6 +2,7 @@ class A{
   void m(){
     System.out.println(1);
   }
+
   void test(){
     m();
   }
@@ -11,6 +12,7 @@ class B extends A{
   void m(){
     System.out.println(2);
   }
+
   void testSuper(){
     super.m();
   }

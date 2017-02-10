@@ -3,17 +3,21 @@ import java.util.Scanner;
 
 class DwaUlamki{
   Ulamek ulam1, ulam2;
+
   DwaUlamki(Ulamek u1, Ulamek u2){
     ulam1=u1;
     ulam2=u2;
 	}
+
   int NWD(int a, int b){
     while (a!=b)
       if (a>b) a-=b;
       else b-=a;
     return a;
   }
+
   double wyn_add, wyn_min, wyn_mul, wyn_div;
+
   String add(Ulamek u1, Ulamek u2){
     int l=u1.licznik*u2.mianownik+u2.licznik*u1.mianownik;
     int m=u1.mianownik*u2.mianownik;
@@ -29,6 +33,7 @@ class DwaUlamki{
     wyn_add=(double)l/(double)m;
     return (l + "/" + m);
   }
+
   String min(Ulamek u1, Ulamek u2){
     int l=u1.licznik*u2.mianownik-u2.licznik*u1.mianownik;
     int m=u1.mianownik*u2.mianownik;
@@ -44,6 +49,7 @@ class DwaUlamki{
     wyn_min=(double)l/(double)m;
     return (l + "/" + m);
   }
+
   String mul(Ulamek u1, Ulamek u2){
     int l=u1.licznik*u2.licznik;
     int m=u1.mianownik*u2.mianownik;
@@ -59,6 +65,7 @@ class DwaUlamki{
     wyn_mul=(double)l/(double)m;
     return (l + "/" + m);
   }
+
   String div(Ulamek u1, Ulamek u2){
     int l=u1.licznik*u2.mianownik;
     int m=u2.licznik*u1.mianownik;
@@ -74,6 +81,7 @@ class DwaUlamki{
     wyn_div=(double)l/(double)m;
     return (l + "/" + m);
   }
+
   String printDecimal(Ulamek u1, Ulamek u2){
     java.text.DecimalFormat df=new java.text.DecimalFormat(); //tworzymy obiekt DecimalFormat
     df.setMinimumFractionDigits(2); //dla df ustawiamy najmniejszą ilość miejsc po przecinku
@@ -85,13 +93,16 @@ class DwaUlamki{
 
 class Ulamek{
   int licznik, mianownik;
+
   Ulamek(int l, int m){
     licznik=l;
     mianownik=m;
   }
+
   Ulamek(){
     this(0, 1);
   }
+
   int switchPrint(){
     Scanner in=new Scanner(System.in);
     System.out.println("Jak wypisywać dane?");
@@ -104,15 +115,18 @@ class Ulamek{
     }
     return x;
   }
+
   static void takeNum(){
     System.out.println("Podaj licznik i mianownik ulamka:");
   }
+
   void isZero(){
     if (mianownik==0){
       System.out.println("Mianownik musi byc rozny od 0!");
       System.exit(0);
     }
   }
+
   public static void main(String[] args){
     Scanner in=new Scanner(System.in);
     Ulamek ulam1=new Ulamek();

@@ -7,6 +7,7 @@ public class AnalizaPliku{
   public File file;
   public Scanner input;
   public int[] arr;
+
   void readFile(String filename){
     file = new File (filename);
     try{
@@ -16,6 +17,7 @@ public class AnalizaPliku{
       System.out.println("File Not Found\n");
     }
   }
+
   void countCharacters(){
     int words = 0;
     int lines = 0;
@@ -37,16 +39,19 @@ public class AnalizaPliku{
     System.out.println("Liczba slow: " + words);
     System.out.println("Liczba znakow: " + chars);
   }
+
   void timeOfFile(){
     long diff = new Date().getTime() - file.lastModified();
     System.out.println(diff/60/60/1000 + "h");
   }
+
   void zeroArr(){
     arr = new int[256];
     for (int i=0; i<=255; i++){
       arr[i]=0;
     }
   }
+
   void printArr(){
     String character = Character.toString ((char) 97);
     int max=0;
@@ -58,6 +63,7 @@ public class AnalizaPliku{
     }
     System.out.println("Najwieksza liczba znakow \"" + character + "\" : " + max);
   }
+
   public static void main(String[] filename) throws FileNotFoundException{
     AnalizaPliku program = new AnalizaPliku();
     program.zeroArr();
